@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.amz.entity.Products;
 
-public class DAO {
+public class ProductDao {
 	private List<Products> productsdb = null;
 	private Connection con = null;
 	private String path = "com.mysql.cj.jdbc.Driver";

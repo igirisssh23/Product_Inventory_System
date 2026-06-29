@@ -2,16 +2,16 @@ package com.amz.service;
 
 import java.util.List;
 
-import com.amz.dao.DAO;
+import com.amz.dao.ProductDao;
 import com.amz.entity.Products;
 
 public class ProductService {
-	private DAO dao = null;
+	private ProductDao dao = null;
 	private List<Products> productsdb = null;
 
 	public List<Products> getAllProducts() {
 
-		dao = new DAO();
+		dao = new ProductDao();
 
 		productsdb = dao.getAllProducts();
 
@@ -21,14 +21,14 @@ public class ProductService {
 
 	public Products getProductsById(int id) {
 
-		dao = new DAO();
+		dao = new ProductDao();
 		productsdb = dao.getAllProducts();
 
 		return productsdb.stream().filter(product -> product.getPid() == id).findFirst().orElse(null);
 	}
 
 	public String insertProduct(Products p1) {
-		dao = new DAO();
+		dao = new ProductDao();
 		dao.insertProducts(p1);
 
 		return"added successfuully";
@@ -36,7 +36,7 @@ public class ProductService {
 
 	public String updateproducts(Products p1) {
 		
-		dao=new DAO();
+		dao=new ProductDao();
 		dao.updateproducts(p1);
 		
 		
@@ -44,7 +44,7 @@ public class ProductService {
 	}
 
 	public Products getExpensiveProduct() {
-		dao=new DAO();
+		dao=new ProductDao();
 		dao.getexpensiveproduct();
 		
 		return dao.getexpensiveproduct();
@@ -53,7 +53,7 @@ public class ProductService {
 	
 	public int getTotalInventoryValue() {
 
-	    dao = new DAO();
+	    dao = new ProductDao();
 
 	    return dao.getTotalInventoryValue();
 	}
