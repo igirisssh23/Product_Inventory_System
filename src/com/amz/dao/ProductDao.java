@@ -16,7 +16,7 @@ public class ProductDao {
 	private String path = "com.mysql.cj.jdbc.Driver";
 	private String url = "jdbc:mysql://localhost:3306/db_amz_products?createDatabaseIfNotExist=true";
 	private String user = "root";
-	private String pass = "Girish@2301";
+	private String pass = "";
 	private PreparedStatement pst = null;
 	ResultSet rs = null;
 
